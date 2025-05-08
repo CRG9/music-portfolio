@@ -1,0 +1,58 @@
+<!--website industry standard homepage is index.html-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Records</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+    href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet"
+  />
+  </head>
+  <header>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/records.html">Records</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="title">
+      <p>Music by Chris Galetta</p>
+  </div>
+  </header>
+  <body>
+    <div class="subheader">
+      <h1>Recording works of art since 2020</h1>
+    </div>
+    <div>
+      <h2>Check out my latest drops...</h2>
+    </div>
+    <div class="records-list">
+      <ul>
+        <li><div class="record-icon"></div>F*ck what you heard!</li>
+        <li><div class="record-icon"></div>Life gets better when you cut'em off</li>
+        <li><div class="record-icon"></div>Latinnnnnnnnna</li>
+      </ul>
+    </div>
+  </body>
+  <script>
+    const links = document.querySelectorAll(".main-nav a");
+    const currentPath = window.location.pathname;
+    const currentPage =
+      currentPath === "/" ? "index.html" : currentPath.split("/").pop();
+
+    links.forEach((link) => {
+      const href = link.getAttribute("href").replace(/^\//, "");
+      if (href === currentPage) {
+        link.classList.add("active");
+      }
+    });
+  </script>
+</html>
+
+<!-- D:\Desktop\Codecademy\projects\hello_html\index.html -->

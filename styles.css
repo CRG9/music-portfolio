@@ -1,0 +1,423 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+/*------------------ Main Navigation at the top of the page ----------------*/
+
+.main-nav {
+  background-color: rgb(243, 243, 189);
+  font-family: Raleway, serif;
+  font-weight: 700;
+  border: solid 2px black;
+  margin-bottom: 10px;
+}
+
+.main-nav a:link,
+.main-nav a:visited {
+  color: navy;
+}
+
+.main-nav a.active,
+.main-nav a.active:visited {
+  color: red;
+  font-weight: bold;
+}
+
+.main-nav nav {
+  margin: 5px; /* Adds a 5px margin around the nav element */
+  display: flex; /* Sets the nav element as a flex container */
+  min-height: 60px; /* Sets a minimum height of 60px for the nav element */
+  top: 0; /* Positions the nav element at the top (useful if position is fixed or absolute) */
+}
+
+.main-nav li {
+  margin: 25px 50px;
+  font-size: 25px;
+  color: navy;
+}
+
+.main-nav ul {
+  display: flex; /* Sets the ul element as a flex container */
+  justify-content: center; /* Centers the list items horizontally within the ul */
+  align-items: center; /* Centers the list items vertically within the ul */
+  list-style: none; /* Removes bullet points from the list items */
+  padding: 0; /* Removes default padding from the ul */
+  margin: 0; /* Removes default margin from the ul */
+}
+
+.main-nav a {
+  text-decoration: none;
+  padding: 10px;
+  color: navy; /* default link color */
+  transition: color 0.2s ease;
+}
+
+/*----------------------------Image Gallery on About Page--------------------*/
+
+.scroller-spacer {
+  flex: 0 0 12px;
+}
+
+.scroller-wrapper {
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+  align-items: center;
+  position: relative;
+  overflow: hidden; /* optional for polish */
+}
+
+.media-scroller {
+  display: flex;
+  flex: 1 0 auto;
+  min-width: max-content; /* allows horizontal overflow */
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 12px;
+  justify-content: flex-start;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+}
+
+.media-scroller::-webkit-scrollbar {
+  display: none;
+}
+
+/* Each item (rhombus container) */
+.media-element {
+  flex: 0 0 calc((100vw - 48px) / 3 + 24px); /* ensures 3 visible rhombuses */
+  height: 25vh;
+  scroll-snap-align: center;
+  transform: skewX(-20deg);
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+/* Image inside rhombus */
+.media-element img {
+  position: absolute;
+  inset: 0;
+  width: 125%;
+  left: -12.5%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: skewX(20deg); /* cancel parent skew */
+}
+
+/*----------------------------- Experience Header-----------------------------*/
+
+.experience {
+  margin-top: 10px;
+  border-top: 2px solid black;
+  width: 100%;
+}
+
+.experience h2 {
+  display: block;
+  padding: 20px;
+  font-size: 40px;
+  text-align: center;
+}
+
+/*--------Experience Milestones-------*/
+
+/*--- Group container to align heading and content ---*/
+.milestone-container-group {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  margin: 20px 0;
+}
+
+/*--- Shared heading style above right section ---*/
+.milestone-heading {
+  box-sizing: border-box;
+  margin: 20px 0;
+  padding: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 30px;
+}
+
+/*--- Centers both milestone sections ---*/
+.milestone-container-left,
+.milestone-container-right {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 40px;
+  width: max-content;
+}
+
+/*--- Common content boxes ---*/
+.milestone-left,
+.milestone-right,
+.blurb-left,
+.blurb-right {
+  flex-shrink: 0;
+  width: 400px;
+}
+
+/*--- Left milestone styles ---*/
+.milestone-left {
+  width: 200px;
+  margin: 20px;
+  padding: 50px;
+  display: flex;
+  border: 2px solid black;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.milestone-left img {
+  max-width: 120%;
+  max-height: 120%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block; /* removes bottom whitespace from inline images */
+}
+
+.blurb-left {
+  width: 400px;
+  margin: 20px;
+  padding: 50px;
+  display: flex;
+  border: 2px solid black;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.blurb-left p {
+  display: inline-block;
+  margin: 20px;
+}
+
+/*--- Right milestone styles ---*/
+.milestone-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* stack video and caption vertically */
+  padding: 50px;
+  margin: 20px;
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 200px; /* your existing width */
+}
+
+.milestone-right img {
+  max-width: 120%;
+  max-height: 120%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block; /* removes bottom whitespace from inline images */
+}
+
+.blurb-right {
+  width: 400px;
+  margin: 20px;
+  padding: 50px;
+  display: flex;
+  border: 2px solid black;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.blurb-right p {
+  display: inline-block;
+  margin: 20px;
+}
+
+.fifth-grade-jam {
+  color: #ff00ff;
+  position: relative;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.fifth-grade-jam:hover {
+  color: #10c7ec; /* or any color you like */
+  background-color: #ffff99; /* optional */
+  cursor: pointer; /* makes it feel interactive */
+  font-weight: bold; /* or use transform for fun effect */
+  transition: all 0.2s ease;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  opacity: 0;
+  width: max-content;
+  max-width: 400px;
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  padding: 6px 10px;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%; /* position above the span */
+  left: 50%;
+  transform: translateX(-50%);
+  transition: opacity 0.3s ease;
+  font-size: 14px;
+  white-space: nowrap;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.fifth-grade-jam:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+.media-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center video and caption */
+  gap: 10px;
+}
+
+.media-block video {
+  height: auto;
+  display: block;
+  max-width: 120%;
+}
+
+.media-block figcaption {
+  font-size: 14px;
+  color: #380097;
+  text-align: center;
+  font-style: italic;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 700;
+}
+
+.hover-video {
+  border: solid 4px black;
+  border-radius: 15px;
+}
+
+audio {
+  display: none;
+}
+
+.media-block {
+  position: relative; /* Needed for .music-notes-container to align */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.music-notes-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.music-note {
+  position: absolute;
+  font-size: 20px;
+  animation: float-up-right 2s linear forwards;
+}
+
+@keyframes float-up-right {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(60px, -100px) scale(1.5);
+  }
+}
+
+/*----------------------------- Records Page ------------------------------*/
+
+/* Creates a small section for a record list */
+.records-list {
+  background-color: silver;
+  color: darkblue;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 10px;
+  width: 20vw;
+  max-width: 250px;
+  min-width: 200px;
+  height: 40vh;
+  min-height: 300px;
+  max-height: 500px;
+  margin: 10px auto;
+}
+
+/* Creates formatting for how each line should be spaced */
+.records-list li {
+  margin: 5px;
+  padding: 5px;
+  list-style: none;
+}
+
+/* Creates an icon that replaces the numbered list and presents it next to each line item */
+.record-icon {
+  background-image: url("./assets/platinum_records.PNG");
+  background-size: 20px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  vertical-align: middle;
+  height: 20px;
+  width: 20px;
+  margin: 5px;
+}
+
+.contact-info {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px;
+  width: 30vw;
+  max-width: 400px;
+  min-width: 300px;
+  height: 20vh;
+  min-height: 100px;
+  max-height: 300px;
+  margin: 10px auto;
+  text-align: center;
+}
+
+.contact-info li {
+  margin: 5px;
+  padding: 5px;
+  list-style: none;
+}
+
+/* Creates an icon that replaces the numbered list and presents it next to each line item */
+.instagram-icon {
+  background-image: url("./assets/Instagram_icon.png");
+  background-size: 20px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  vertical-align: middle;
+  height: 20px;
+  width: 20px;
+  margin: 5px;
+}
+
+.email-icon {
+  background-image: url("./assets/email-icon.png");
+  background-size: 20px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  vertical-align: middle;
+  height: 20px;
+  width: 20px;
+  margin: 5px;
+}
